@@ -3,13 +3,12 @@ import { BiSearch } from "react-icons/bi";
 import {
   Box,
   HStack,
-  Switch,
   Input,
   InputGroup,
   InputLeftElement,
-  Text,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import ColorModeSwitch from "./ColorModeSwitch";
+
 const Nav = () => {
   return (
     <HStack>
@@ -22,12 +21,7 @@ const Nav = () => {
         </InputLeftElement>
         <Input variant="filled" placeholder="Search games..."></Input>
       </InputGroup>
-
-      <Switch size="md" />
-      <Box whiteSpace={"nowrap"} pr={3}>
-        Dark Mode
-      </Box>
-      {/* <BiSearch size={22}></BiSearch> */}
+      <ColorModeSwitch></ColorModeSwitch>
     </HStack>
   );
 };
