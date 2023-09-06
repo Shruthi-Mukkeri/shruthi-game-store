@@ -12,13 +12,13 @@ function App() {
       <GridItem area="nav">
         <Nav></Nav>
       </GridItem>
-      <GridItem area="main" bg="orange"></GridItem>
+      {/* <GridItem area="main"></GridItem> */}
       <Show above="lg">
         <GridItem area="aside" bg="red">
           Aside
         </GridItem>
       </Show>
-      <GridItem area="main" bg="green">
+      <GridItem area="main">
         <Gamegrid></Gamegrid>
       </GridItem>
     </Grid>
