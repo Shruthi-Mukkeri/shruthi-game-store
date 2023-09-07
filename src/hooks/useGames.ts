@@ -23,19 +23,25 @@ interface GameRes {
 const useGames = () => {
   const [games, setGame] = useState<Game[]>([]);
   const [error, setErr] = useState("");
+  const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
     const controller = new AbortController();
+    setLoading(true);
     apiClient
       .get<GameRes>("/games", { signal: controller.signal })
-      .then((res) => setGame(res.data.results))
+      .then((res) => {
+        setGame(res.data.results);
+        setLoading(false);
+      })
       .catch((err) => {
         if (err instanceof CanceledError) return;
         setErr(err.message);
+        setLoading(false);
       });
     return () => controller.abort();
   }, []);
-  return { games, error };
+  return { games, error, isLoading };
 };
 
 export default useGames;
