@@ -13,7 +13,6 @@ function App() {
       <GridItem area="nav">
         <Nav></Nav>
       </GridItem>
-      {/* <GridItem area="main"></GridItem> */}
       <Show above="lg">
         <GridItem area="aside">
           <GenreList></GenreList>
