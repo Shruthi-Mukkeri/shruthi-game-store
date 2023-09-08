@@ -12,8 +12,8 @@ import ColorModeSwitch from "./ColorModeSwitch";
 const Nav = () => {
   return (
     <HStack>
-      <Box pl={3}>
-        <SiAmazongames size={85}></SiAmazongames>
+      <Box px={5}>
+        <SiAmazongames size={80}></SiAmazongames>
       </Box>
       <InputGroup borderRadius="lg">
         <InputLeftElement pointerEvents="none">
