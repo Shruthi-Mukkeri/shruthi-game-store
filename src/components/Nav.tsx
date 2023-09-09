@@ -8,19 +8,19 @@ import {
   InputLeftElement,
 } from "@chakra-ui/react";
 import ColorModeSwitch from "./ColorModeSwitch";
+import Search from "./Search";
 
-const Nav = () => {
+interface Props {
+  onSearch: (searchValue: string) => void;
+}
+
+const Nav = ({ onSearch }: Props) => {
   return (
     <HStack>
       <Box px={5}>
         <SiAmazongames size={80}></SiAmazongames>
       </Box>
-      <InputGroup borderRadius="lg">
-        <InputLeftElement pointerEvents="none">
-          <BiSearch size={22}></BiSearch>
-        </InputLeftElement>
-        <Input variant="filled" placeholder="Search games..."></Input>
-      </InputGroup>
+      <Search onSearch={onSearch}></Search>
       <ColorModeSwitch></ColorModeSwitch>
     </HStack>
   );

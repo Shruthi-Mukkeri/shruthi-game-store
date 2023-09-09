@@ -13,13 +13,13 @@ const GameCards = ({ game }: Props) => {
       <Card>
         <Image src={getCroppedImageUrl(game.background_image)}></Image>
         <CardBody>
-          <Heading fontSize="2xl">{game.name}</Heading>
-          <HStack justifyContent="space-between" pr={2}>
+          <HStack justifyContent="space-between" pr={2} mb={4}>
             <PlatformIconList
               platform={game.parent_platforms.map((p) => p.platform)}
             ></PlatformIconList>
             <CriticScore critic={game.metacritic}></CriticScore>
           </HStack>
+          <Heading fontSize="2xl">{game.name}</Heading>
         </CardBody>
       </Card>
     </>
