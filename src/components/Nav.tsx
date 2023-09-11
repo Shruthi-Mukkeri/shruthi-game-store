@@ -8,7 +8,7 @@ import {
   InputLeftElement,
 } from "@chakra-ui/react";
 import ColorModeSwitch from "./ColorModeSwitch";
-import Search from "./Search";
+import SearchInput from "./SearchInput";
 
 interface Props {
   onSearch: (searchValue: string) => void;
@@ -20,7 +20,7 @@ const Nav = ({ onSearch }: Props) => {
       <Box px={5}>
         <SiAmazongames size={80}></SiAmazongames>
       </Box>
-      <Search onSearch={onSearch}></Search>
+      <SearchInput onSearch={onSearch}></SearchInput>
       <ColorModeSwitch></ColorModeSwitch>
     </HStack>
   );

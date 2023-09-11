@@ -9,7 +9,7 @@ interface Props {
 }
 const PlatformSelector = ({ onselectPlatform, selectedPlatform }: Props) => {
   const { data, error } = usePlatforms();
-  //   if (error) return null;
+  // if (error.length > 0) return console.log(error.length, "hiiiiiiiiiiiiiiiii");
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={<BsChevronDown />}>

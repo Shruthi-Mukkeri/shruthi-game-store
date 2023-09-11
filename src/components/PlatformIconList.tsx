@@ -14,9 +14,9 @@ import { HStack, Icon, Text } from "@chakra-ui/react";
 import { IconType } from "react-icons";
 
 interface Props {
-  platform: Platform[];
+  platforms: Platform[];
 }
-const PlatformIconList = ({ platform }: Props) => {
+const PlatformIconList = ({ platforms = [] }: Props) => {
   const iconMap: { [key: string]: IconType } = {
     pc: FaWindows,
     playStation: FaPlaystation,
@@ -29,14 +29,14 @@ const PlatformIconList = ({ platform }: Props) => {
     web: BsGlobe,
   };
   return (
-    <HStack>
-      {platform.map((platform) => (
+    <HStack my={1}>
+      {platforms.map((platform) => (
         <Icon
           color="gray.500"
           key={platform.id}
           my={1}
           as={iconMap[platform.slug]}
-        ></Icon>
+        />
       ))}
     </HStack>
   );

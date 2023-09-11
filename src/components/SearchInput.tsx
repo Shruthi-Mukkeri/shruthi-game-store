@@ -6,11 +6,8 @@ interface Props {
   onSearch: (searchValue: string) => void;
 }
 
-const Search = ({ onSearch }: Props) => {
+const SearchInput = ({ onSearch }: Props) => {
   const searchValue = useRef<HTMLInputElement>(null);
-
-  //   const [inputValue, setInputValue] = useState("");
-  //   console.log(inputValue, "refvalue");
 
   return (
     <>
@@ -25,6 +22,8 @@ const Search = ({ onSearch }: Props) => {
             <BiSearch size={22} />
           </InputLeftElement>
           <Input
+            id="searchValue"
+            name="searchValue"
             borderRadius={20}
             ref={searchValue}
             variant="filled"
@@ -36,4 +35,4 @@ const Search = ({ onSearch }: Props) => {
   );
 };
 
-export default Search;
+export default SearchInput;
