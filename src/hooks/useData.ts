@@ -13,7 +13,7 @@ const useData = <T>(
   deps?: any[]
 ) => {
   const [data, setData] = useState<T[]>([]);
-  const [error, setErr] = useState(" ");
+  const [error, setErr] = useState("");
   const [isLoading, setLoading] = useState(false);
 
   useEffect(
