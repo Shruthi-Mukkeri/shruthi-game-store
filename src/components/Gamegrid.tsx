@@ -4,7 +4,6 @@ import useGames from "../hooks/useGames";
 import GameCardContainer from "./GameCardContainer";
 import GameCardSkeleton from "./GameCardSkeleton";
 import GameCards from "./GameCards";
-// import {  } from "@chakra-ui/react";
 
 interface Props {
   gameQuery: GameQuery;
