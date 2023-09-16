@@ -1,11 +1,6 @@
 import { useEffect, useState } from "react";
-import apiClient from "../services/api-client";
+import apiClient, { DataRes } from "../services/api-client";
 import { AxiosRequestConfig, CanceledError } from "axios";
-
-export interface DataRes<T> {
-  count: number;
-  results: T[];
-}
 
 const useData = <T>(
   endPoint: string,
