@@ -10,17 +10,13 @@ import {
 import ColorModeSwitch from "./ColorModeSwitch";
 import SearchInput from "./SearchInput";
 
-interface Props {
-  onSearch: (searchValue: string) => void;
-}
-
-const Nav = ({ onSearch }: Props) => {
+const Nav = () => {
   return (
     <HStack>
       <Box px={5}>
         <SiAmazongames size={80}></SiAmazongames>
       </Box>
-      <SearchInput onSearch={onSearch}></SearchInput>
+      <SearchInput></SearchInput>
       <ColorModeSwitch></ColorModeSwitch>
     </HStack>
   );

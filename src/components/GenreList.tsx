@@ -11,13 +11,13 @@ import {
 import useGenre from "../hooks/useGenres";
 import getCroppedImageUrl from "../services/image-url";
 import { Genre } from "../hooks/useGenres";
+import useGameQueryStore from "../store";
 
-interface Props {
-  onSelectGenre: (genre: Genre) => void;
-  selectedGenreId?: number;
-}
-const GenreList = ({ onSelectGenre, selectedGenreId }: Props) => {
+const GenreList = () => {
   const { data, isLoading, error } = useGenre();
+  const selectedGenreId = useGameQueryStore((s) => s.gameQuery.genreId);
+  const setSelectedGenreId = useGameQueryStore((s) => s.setGenreId);
+
   return (
     <>
       {isLoading && <Spinner />}
@@ -40,7 +40,7 @@ const GenreList = ({ onSelectGenre, selectedGenreId }: Props) => {
                 textAlign="left"
                 fontWeight={selectedGenreId === genre.id ? "bold" : "normal"}
                 variant="link"
-                onClick={() => onSelectGenre(genre)}
+                onClick={() => setSelectedGenreId(genre.id)}
                 fontSize="lg"
               >
                 {genre.name}
