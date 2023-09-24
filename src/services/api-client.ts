@@ -23,6 +23,9 @@ class ApiClient<T> {
       .get<DataRes<T>>(this.endPoint, config)
       .then((res) => res.data);
   };
+  get = (id: number | string) => {
+    return apiclient.get<T>(this.endPoint + "/" + id).then((res) => res.data);
+  };
 }
 
 export default ApiClient;
