@@ -2,17 +2,7 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import ms from "ms";
 import useGameQueryStore from "../store";
 import ApiClient, { DataRes } from "./../services/api-client";
-import { Platform } from "./usePlatforms";
-
-export interface Game {
-  id: number;
-  name: string;
-  slug: string;
-  description_raw: string;
-  background_image: string;
-  parent_platforms: { platform: Platform }[];
-  metacritic: number;
-}
+import { Game } from "../entities/Game";
 
 interface InfinityGames {
   pageSize: number;
