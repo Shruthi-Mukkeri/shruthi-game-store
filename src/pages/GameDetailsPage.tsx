@@ -1,4 +1,4 @@
-import { Heading, Spinner } from "@chakra-ui/react";
+import { GridItem, Heading, SimpleGrid, Spinner } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import ExpandibleText from "../components/ExpandibleText";
 import useGame from "../hooks/useGame";
@@ -13,13 +13,19 @@ const GameDetailsPage = () => {
   if (isLoading) return <Spinner />;
   if (error) throw error;
   return (
-    <>
-      <Heading>{game?.name}</Heading>
-      <ExpandibleText>{game?.description_raw.toString() || ""}</ExpandibleText>
-      <GameAttributes game={game!}></GameAttributes>
-      <GameTrailer gameId={game?.id!} />
-      <GameScreenshots gameId={game?.id!} />
-    </>
+    <SimpleGrid columns={{ base: 1, md: 2 }}>
+      <GridItem>
+        <Heading>{game?.name}</Heading>
+        <ExpandibleText>
+          {game?.description_raw.toString() || ""}
+        </ExpandibleText>
+        <GameAttributes game={game!}></GameAttributes>
+      </GridItem>
+      <GridItem>
+        <GameTrailer gameId={game?.id!} />
+        <GameScreenshots gameId={game?.id!} />
+      </GridItem>
+    </SimpleGrid>
   );
 };
 
