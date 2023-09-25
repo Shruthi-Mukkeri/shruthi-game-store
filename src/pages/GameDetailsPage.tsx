@@ -19,7 +19,7 @@ const GameDetailsPage = () => {
         <ExpandibleText>
           {game?.description_raw.toString() || ""}
         </ExpandibleText>
-        <GameAttributes game={game!}></GameAttributes>
+        <GameAttributes game={game!} />
       </GridItem>
       <GridItem>
         <GameTrailer gameId={game?.id!} />

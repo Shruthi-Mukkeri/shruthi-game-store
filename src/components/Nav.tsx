@@ -9,15 +9,18 @@ import {
 } from "@chakra-ui/react";
 import ColorModeSwitch from "./ColorModeSwitch";
 import SearchInput from "./SearchInput";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
     <HStack>
-      <Box px={5}>
-        <SiAmazongames size={80}></SiAmazongames>
+      <Box>
+        <Link to="/">
+          <SiAmazongames size={80}></SiAmazongames>
+        </Link>
       </Box>
-      <SearchInput></SearchInput>
-      <ColorModeSwitch></ColorModeSwitch>
+      <SearchInput />
+      <ColorModeSwitch />
     </HStack>
   );
 };
