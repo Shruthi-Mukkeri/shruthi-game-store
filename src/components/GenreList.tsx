@@ -6,11 +6,9 @@ import {
   List,
   ListItem,
   Spinner,
-  Text,
 } from "@chakra-ui/react";
 import useGenre from "../hooks/useGenres";
 import getCroppedImageUrl from "../services/image-url";
-import { Genre } from "../entities/Genre";
 import useGameQueryStore from "../store";
 
 const GenreList = () => {
