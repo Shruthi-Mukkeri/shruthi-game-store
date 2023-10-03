@@ -14,9 +14,9 @@ import { Link } from "react-router-dom";
 const Nav = () => {
   return (
     <HStack>
-      <Box>
+      <Box paddingLeft={2}>
         <Link to="/">
-          <SiAmazongames size={80}></SiAmazongames>
+          <SiAmazongames size={70}></SiAmazongames>
         </Link>
       </Box>
       <SearchInput />

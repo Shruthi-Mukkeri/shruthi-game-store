@@ -5,7 +5,7 @@ import { Box } from "@chakra-ui/react";
 
 const LayoutPage = () => {
   return (
-    <Box p={5}>
+    <Box>
       <Nav />
       <Outlet />
     </Box>

@@ -26,7 +26,7 @@ const HomePage = () => {
 
         <GridItem area="main">
           <GameHeading></GameHeading>
-          <Flex pl={3} mb={4}>
+          <Flex px={3} mb={4}>
             <Box mr={4}>
               <PlatformSelector></PlatformSelector>
             </Box>
